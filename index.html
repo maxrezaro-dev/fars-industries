@@ -4,38 +4,141 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FARS Industries | صنایع آینده</title>
+<meta name="theme-color" content="#08090b">
+<title>FARS Industries | Building Tomorrow</title>
 <style>
-:root{--gold:#d6b45d;--bg:#090b0e;--panel:#15191f;--text:#f4f0e6}
+:root {
+  --gold:#d8b45c;
+  --gold2:#f4d98c;
+  --bg:#08090b;
+  --panel:#14161a;
+  --text:#f5f1e8;
+  --muted:#b7b4ad;
+}
 *{box-sizing:border-box;scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial;line-height:2}
-header{padding:20px 6%;border-bottom:1px solid #403725;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
-.logo{color:var(--gold);font-size:25px;font-weight:bold;direction:ltr}
-.logo small{display:block;text-align:center;font-size:10px;letter-spacing:4px}
-nav{display:flex;gap:15px;flex-wrap:wrap}
-a{color:var(--gold);text-decoration:none}
-nav a{color:#eee;font-size:13px}
-.hero{padding:100px 8%;background:radial-gradient(ellipse at 75% 20%,#302718,transparent 55%)}
-.hero h1{font-size:clamp(38px,7vw,70px);line-height:1.4;margin:10px 0}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:Tahoma,Arial,sans-serif;line-height:1.9
+}
+a{color:inherit;text-decoration:none}
+header{
+  position:sticky;top:0;z-index:10;
+  background:#090a0df2;backdrop-filter:blur(12px);
+  border-bottom:1px solid #5c4922;
+  padding:12px 5%;display:flex;
+  align-items:center;justify-content:space-between;gap:20px
+}
+.brand{display:flex;align-items:center;gap:10px;color:var(--gold)}
+.brand svg{width:48px;height:48px}
+.brand strong{font-size:24px;direction:ltr;line-height:1.2}
+.brand small{display:block;font-size:9px;letter-spacing:4px}
+nav{display:flex;align-items:center;gap:20px}
+nav a{font-size:13px;color:#eee;transition:.2s}
+nav a:hover{color:var(--gold)}
+.menu-btn{
+  display:none;background:none;border:1px solid #705b2e;
+  color:var(--gold);font-size:24px;border-radius:8px;
+  padding:2px 12px
+}
+.hero{
+  min-height:570px;padding:85px 8%;
+  display:flex;align-items:center;
+  background:
+  radial-gradient(ellipse at 75% 40%,#49391b66,transparent 55%),
+  linear-gradient(115deg,#08090b 35%,#17130c 100%);
+  border-bottom:1px solid #705b2e;
+  position:relative;overflow:hidden
+}
+.hero:after{
+  content:"";position:absolute;width:380px;height:380px;
+  border:1px solid #b68d3c33;border-radius:50%;
+  left:-130px;bottom:-200px;
+  box-shadow:0 0 0 35px #b68d3c0c,0 0 0 70px #b68d3c08
+}
+.hero-content{max-width:720px;position:relative;z-index:1}
+.eyebrow{color:var(--gold);letter-spacing:4px;font-size:12px}
+.hero h1{font-size:clamp(36px,6vw,68px);line-height:1.45;margin:15px 0}
 .gold{color:var(--gold)}
-.eyebrow{color:var(--gold);letter-spacing:3px}
-p{color:#c4c5c7}
-.btn{display:inline-block;background:var(--gold);color:#111;padding:9px 20px;border-radius:6px;margin:8px 0}
-section{padding:65px 8%;border-top:1px solid #29251e}
-h2{color:var(--gold)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:var(--panel);border:1px solid #393126;border-radius:12px;padding:22px}
-.notice{border-right:3px solid var(--gold);background:#17150f;padding:15px;margin:25px 0;color:#d9cda9}
-footer{text-align:center;padding:30px;color:#999;border-top:1px solid #333}
-input,textarea{width:100%;padding:12px;margin:8px 0;background:#15191f;color:white;border:1px solid #555;border-radius:6px}
-button{background:var(--gold);padding:10px 20px;border:0;border-radius:6px}
+.hero p{color:#c7c4bd;font-size:17px;max-width:620px}
+.hero-logo{
+  display:flex;align-items:center;gap:20px;
+  margin-bottom:25px;color:var(--gold)
+}
+.hero-logo svg{width:105px;height:105px}
+.hero-logo strong{font-size:48px;direction:ltr;line-height:1.2}
+.hero-logo small{display:block;letter-spacing:8px;font-size:13px}
+.btn{
+  display:inline-block;background:var(--gold);color:#15110a;
+  border:1px solid var(--gold);border-radius:8px;
+  padding:11px 24px;margin-top:18px;font-weight:bold;
+  transition:.2s
+}
+.btn:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn.outline{background:transparent;color:var(--gold);margin-right:8px}
+section{padding:65px 7%;border-bottom:1px solid #29251e}
+.section-title{margin-bottom:30px}
+.section-title h2{color:var(--gold);font-size:29px;margin:5px 0}
+.section-title p{color:var(--muted);margin:0}
+.cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:18px
+}
+.card{
+  background:linear-gradient(145deg,#191a1d,#101114);
+  border:1px solid #5b4827;border-radius:13px;
+  padding:24px;transition:.25s
+}
+.card:hover{transform:translateY(-5px);border-color:var(--gold)}
+.card .symbol{font-size:30px;color:var(--gold)}
+.card h3{color:var(--gold);margin:8px 0}
+.card p{color:var(--muted);font-size:14px}
+.notice{
+  margin-top:25px;padding:16px 20px;
+  border-right:3px solid var(--gold);
+  background:#17140e;color:#d8c99f;border-radius:5px
+}
+footer{
+  padding:30px 6%;display:flex;justify-content:space-between;
+  gap:15px;flex-wrap:wrap;color:#aaa;font-size:12px
+}
+footer strong{color:var(--gold)}
+@media(max-width:760px){
+  header{padding:10px 5%}
+  .menu-btn{display:block}
+  nav{
+    display:none;position:absolute;top:100%;right:0;left:0;
+    background:#0b0c0f;padding:20px 7%;
+    border-bottom:1px solid #705b2e;
+    flex-direction:column;align-items:stretch;gap:13px
+  }
+  nav.open{display:flex}
+  nav a{padding:7px 0}
+  .hero{min-height:530px;padding:65px 7%}
+  .hero-logo svg{width:75px;height:75px}
+  .hero-logo strong{font-size:35px}
+  .hero h1{font-size:39px}
+  .hero p{font-size:15px}
+  section{padding:48px 6%}
+  footer{flex-direction:column}
+}
 </style>
 </head>
 <body>
 
 <header>
-<div class="logo">◈ FARS<small>INDUSTRIES</small></div>
-<nav>
+<a class="brand" href="#home">
+<svg viewBox="0 0 100 100" fill="none" aria-label="FARS emblem">
+<circle cx="50" cy="50" r="34" stroke="#d8b45c" stroke-width="9" stroke-dasharray="8 4"/>
+<path d="M27 66V52h11v14M46 66V40h11v26M65 66V29h11v37" fill="#d8b45c"/>
+<path d="M17 76L83 19" stroke="#f4d98c" stroke-width="5" stroke-linecap="round"/>
+<circle cx="50" cy="50" r="43" stroke="#d8b45c" stroke-width="1" opacity=".5"/>
+</svg>
+<span><strong>FARS</strong><small>INDUSTRIES</small></span>
+</a>
+
+<button class="menu-btn" id="menuBtn" aria-label="باز کردن منو" aria-expanded="false">☰</button>
+
+<nav id="nav">
 <a href="#home">خانه</a>
 <a href="#about">درباره ما</a>
 <a href="#fields">حوزه‌ها</a>
@@ -49,71 +152,100 @@ button{background:var(--gold);padding:10px 20px;border:0;border-radius:6px}
 
 <main>
 <div class="hero" id="home">
+<div class="hero-content">
 <div class="eyebrow">BUILDING TOMORROW'S INDUSTRY</div>
+<div class="hero-logo">
+<svg viewBox="0 0 100 100" fill="none">
+<circle cx="50" cy="50" r="34" stroke="#d8b45c" stroke-width="9" stroke-dasharray="8 4"/>
+<path d="M27 66V52h11v14M46 66V40h11v26M65 66V29h11v37" fill="#d8b45c"/>
+<path d="M17 76L83 19" stroke="#f4d98c" stroke-width="5" stroke-linecap="round"/>
+</svg>
+<div><strong>FARS</strong><small>INDUSTRIES</small></div>
+</div>
 <h1>ایده‌های صنعتی،<br><span class="gold">برای فردای بهتر.</span></h1>
 <p>نگاهی تازه به صنعت، فناوری، تولید و آینده مواد اولیه.</p>
 <a class="btn" href="#about">آشنایی با FARS</a>
-<div class="notice">FARS Industries در حال حاضر یک پروژه مستقل در مرحله شکل‌گیری است؛ نه یک شرکت ثبت‌شده یا کارخانه فعال.</div>
+<a class="btn outline" href="#knowledge">مرکز دانش</a>
+</div>
 </div>
 
 <section id="about">
-<div class="eyebrow">ABOUT US</div>
-<h2>درباره FARS Industries</h2>
-<p>هدف ما شناخت دنیای صنعت، بررسی روش‌های تولید و مطالعه ایده‌هایی است که می‌توانند در آینده به پروژه‌های واقعی تبدیل شوند.</p>
-<p>مسیر ما از یادگیری و پژوهش آغاز می‌شود و به توسعه صنعتی می‌رسد.</p>
+<div class="section-title">
+<div class="eyebrow">ABOUT FARS</div>
+<h2>درباره ما</h2>
+<p>آغاز یک مسیر با یادگیری، پژوهش و ایده‌پردازی صنعتی.</p>
+</div>
+<p>FARS Industries یک پروژه مستقل در مرحله شکل‌گیری است که با هدف شناخت صنعت، فناوری‌های تولید و فرصت‌های توسعه فعالیت می‌کند.</p>
+<div class="notice">وضعیت فعلی: پروژه شخصی و آموزشی؛ هنوز شرکت ثبت‌شده یا کارخانه فعال نیست.</div>
 </section>
 
 <section id="fields">
-<div class="eyebrow">INDUSTRIES</div>
-<h2>حوزه‌های فعالیت مورد بررسی</h2>
+<div class="section-title">
+<div class="eyebrow">INDUSTRIAL FIELDS</div>
+<h2>حوزه‌های مورد بررسی</h2>
+</div>
 <div class="cards">
-<div class="card"><h3>مواد و پلیمرها</h3><p>شناخت مواد اولیه، پلاستیک‌ها و فناوری‌های بسته‌بندی.</p></div>
-<div class="card"><h3>ماشین‌آلات صنعتی</h3><p>بررسی خطوط تولید، دستگاه‌ها و کنترل کیفیت.</p></div>
-<div class="card"><h3>فناوری پایدار</h3><p>مطالعه کاهش پسماند و مواد سازگارتر با محیط زیست.</p></div>
+<div class="card"><div class="symbol">⚙</div><h3>مواد و پلیمرها</h3><p>شناخت مواد اولیه، پلیمرها و فناوری بسته‌بندی.</p></div>
+<div class="card"><div class="symbol">⌂</div><h3>تولید صنعتی</h3><p>بررسی فرایندهای تولید و خطوط کارخانه.</p></div>
+<div class="card"><div class="symbol">♧</div><h3>فناوری پایدار</h3><p>مطالعه کاهش پسماند و راهکارهای مسئولانه.</p></div>
 </div>
 </section>
 
 <section id="research">
+<div class="section-title">
 <div class="eyebrow">RESEARCH & DEVELOPMENT</div>
 <h2>پژوهش و توسعه</h2>
-<p>ایده‌ها، بررسی‌های فنی، مقایسه مواد و گزارش‌های آزمایشی در این بخش قرار خواهند گرفت.</p>
-<div class="notice">در مطالب پژوهشی، منابع اطلاعات و محدودیت‌های بررسی باید مشخص باشند.</div>
+<p>ایده‌ها و بررسی‌های فنی، با ذکر منابع و محدودیت‌ها.</p>
+</div>
+<div class="card"><h3>از پرسش تا راهکار</h3><p>در این بخش می‌توان گزارش‌های پژوهشی، مقایسه مواد و بررسی فناوری‌های صنعتی را منتشر کرد.</p></div>
 </section>
 
 <section id="products">
-<div class="eyebrow">OUR PRODUCTS</div>
-<h2>محصولات</h2>
+<div class="section-title"><div class="eyebrow">PRODUCTS</div><h2>محصولات</h2></div>
 <p>در حال حاضر محصول تجاری برای فروش عرضه نمی‌شود. این بخش برای معرفی محصولات آینده در نظر گرفته شده است.</p>
 </section>
 
 <section id="knowledge">
-<div class="eyebrow">FARS KNOWLEDGE</div>
-<h2>مرکز دانش</h2>
-<div class="card">
-<h3>از ایده تا کارخانه</h3>
-<p>راه‌اندازی یک واحد تولیدی به شناخت بازار، مواد اولیه، ماشین‌آلات، نیروی انسانی، مجوزها، ایمنی و سرمایه در گردش نیاز دارد.</p>
-<p>هزینه واقعی تولید فقط قیمت دستگاه نیست؛ نصب، زیرساخت، تعمیر و نگهداری، ضایعات و حمل‌ونقل نیز اهمیت دارند.</p>
-<p>مقالات آینده می‌توانند شامل تصویر، جدول، ویدئوی منبع اصلی و فهرست منابع باشند.</p>
+<div class="section-title"><div class="eyebrow">FARS KNOWLEDGE</div><h2>مرکز دانش</h2></div>
+<div class="cards">
+<div class="card"><div class="symbol">▤</div><h3>مقالات صنعتی</h3><p>آشنایی با ماشین‌آلات، مواد اولیه و فرایند تولید.</p></div>
+<div class="card"><div class="symbol">▶</div><h3>ویدئوهای آموزشی</h3><p>پیوند به منابع و ویدئوهای مرتبط با صنعت.</p></div>
+<div class="card"><div class="symbol">▦</div><h3>جدول‌ها و داده‌ها</h3><p>مقایسه اطلاعات فنی و اقتصادی با ذکر منابع.</p></div>
 </div>
 </section>
 
 <section id="support">
-<div class="eyebrow">SUPPORT</div>
-<h2>حمایت از پروژه</h2>
-<p>در حال حاضر هیچ درگاه پرداخت یا روش دریافت کمک مالی فعالی وجود ندارد.</p>
-<p>هرگونه حمایت احتمالی در آینده باید شفاف و مطابق قوانین و شرایط سرویس پرداخت باشد.</p>
+<div class="section-title"><div class="eyebrow">SUPPORT</div><h2>حمایت از پروژه</h2></div>
+<p>در حال حاضر روش دریافت کمک مالی یا درگاه پرداخت فعالی وجود ندارد.</p>
 </section>
 
 <section id="contact">
-<div class="eyebrow">CONTACT</div>
-<h2>ارتباط با ما</h2>
-<p>اطلاعات تماس رسمی پس از راه‌اندازی راه ارتباطی معتبر به این قسمت اضافه خواهد شد.</p>
+<div class="section-title"><div class="eyebrow">CONTACT</div><h2>ارتباط با ما</h2></div>
+<p>راه‌های ارتباطی رسمی پس از آماده‌سازی به این بخش اضافه خواهند شد.</p>
 </section>
 </main>
 
 <footer>
-FARS INDUSTRIES © 2026<br>
-BUILDING TOMORROW'S INDUSTRY
+<div><strong>FARS INDUSTRIES</strong> © 2026</div>
+<div>BUILDING TOMORROW'S INDUSTRY</div>
+<div>فارس، نماد پیشرفت و نوآوری</div>
 </footer>
+
+<script>
+const menuBtn=document.getElementById("menuBtn");
+const nav=document.getElementById("nav");
+menuBtn.addEventListener("click",()=>{
+  const opened=nav.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded",opened);
+  menuBtn.textContent=opened?"✕":"☰";
+});
+nav.querySelectorAll("a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    nav.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded","false");
+    menuBtn.textContent="☰";
+  });
+});
+</script>
 </body>
 </html>
